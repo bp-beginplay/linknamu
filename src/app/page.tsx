@@ -1,17 +1,11 @@
 import Image from "next/image";
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 
 // 더미 데이터: 실제 내용은 나중에 교체
 const profile = {
   name: "김동호",
   bio: "풀스택 개발자 | 요즘에는 AI 개발에 관심이 많아요",
 };
-
-const links = [
-  { title: "깃허브", href: "https://github.com/bp-beginplay" },
-  { title: "LinkedIn", href: "https://www.linkedin.com" },
-  { title: "Blog", href: "https://example.com" },
-];
 
 export default function Home() {
   return (
@@ -40,13 +34,7 @@ export default function Home() {
         <p className="mt-2 text-balance text-center text-[15px] leading-relaxed text-muted">
           {profile.bio}
         </p>
-        <ul className="mt-10 flex w-full flex-col gap-4">
-          {links.map((link) => (
-            <li key={link.title}>
-              <LinkCard {...link} />
-            </li>
-          ))}
-        </ul>
+        <LinkList />
       </main>
     </div>
   );
